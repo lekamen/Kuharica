@@ -45,5 +45,13 @@
         app:elevation="0dp"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testBtnClick"
+        android:text="test"
+        app:layout_anchor="@+id/fragment"
+        app:layout_anchorGravity="right|center" />
+
 
 </android.support.design.widget.CoordinatorLayout>

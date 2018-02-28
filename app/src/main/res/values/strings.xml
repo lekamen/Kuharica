@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Kuharica</string>
     <string name="action_settings">Settings</string>
+    <string name="addRecipe_recipeName">Recipe name:</string>
+    <string name="addRecipe_recipeNameHint">Enter recipe name</string>
+    <string name="addRecipe_ingredientHint">Enter ingredient name</string>
+    <string name="addRecipe_ingredientBtnText">Add ingredient</string>
+    <string name="addRecipe_saveBtnText">Save recipe</string>
+    <string name="addRecipe_recipeDetailsHint">Enter recipe details</string>
+    <string name="addRecipe_recipeNotesHint">Enter recipe notes</string>
+    <string name="addRecipe_recipeStepHint">Enter next step</string>
+    <string name="addRecipe_stepBtnText">Add step</string>
 </resources>

@@ -140,4 +140,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void testBtnClick(View view){
+        Intent intent = new Intent(this,AddRecipeActivity.class);
+        startActivity(intent);
+    }
+
 }
