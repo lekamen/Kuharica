@@ -31,9 +31,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="true"></activity>
         <activity android:name=".NovaKategorijaActivity"></activity>
-            android:theme="@style/AppTheme.NoActionBar"
-            android:exported="true"></activity>
-        <activity android:name=".CategoryActivity">
+        <activity android:name=".CategoryActivity"></activity>
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
     </application>
