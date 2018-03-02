@@ -10,7 +10,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +33,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -138,6 +145,24 @@ public class ReceptActivity extends AppCompatActivity {
         List<String> upute = current.getUpute();
         String napomena = current.getNotes();
         String name = current.getImeRecepta();
+        String photo = current.getPhotoRecept();
+
+        if(photo!=null)
+            try {
+                File f=new File(photo);
+
+                Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+                Drawable d = new BitmapDrawable(getResources(), b);
+                toolbar.setBackground(d);
+            }
+            catch (FileNotFoundException e)
+            {
+                e.printStackTrace();
+            }
+        else
+        {
+            toolbar.setBackground(getResources().getDrawable(R.drawable.cake));
+        }
 
         collapsingToolbar.setTitle(name);
 
@@ -213,6 +238,11 @@ public class ReceptActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.uredi_recept:
+
+                Intent intent = new Intent(ctx, AddRecipeActivity.class);
+                intent.putExtra("ID", ID);
+                ctx.startActivity(intent);
+
 
                 return true;
             case R.id.obrisi_recept:
